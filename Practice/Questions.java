@@ -94,3 +94,8 @@ class Solution {
 }
 //GoldMine Dp
 //1463. Cherry Pickup II
+
+
+
+//https://docs.google.com/spreadsheets/d/17-9mN8GQnS73unW6TevFZM3FaiRNUmre95t4WoGF3nw/edit#gid=0
+//

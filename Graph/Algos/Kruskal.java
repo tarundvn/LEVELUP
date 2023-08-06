@@ -43,7 +43,7 @@ public class Kruskal {
             size[p1] += size[p2];
         }
     }
-
+    
     // {{u,v,w}}
     public static void unionFind(int[][] Edges, int N) {
         ArrayList<Edge>[] graph = new ArrayList[N];

@@ -1,7 +1,7 @@
 //MotherVertexGFG
 //1 TopoLogical Sort(Store in Stack)
 //2 Copy Graph intpo New Graph with reversed edges
-//3 DFS(Pop and Store
+//3 DFS(Pop and Store)
 //LeetCode 1631
 class Solution {
     public int minimumEffortPath(int[][] heights) {

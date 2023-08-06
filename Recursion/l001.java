@@ -118,6 +118,7 @@ public class l001{
             return powerBetter(a,b/2)*powerBetter(a,b/2);
     }
 
+    //Recursion With Array
     public static void display(int[] arr,int idx)
     {
         if(idx == arr.length)
@@ -188,7 +189,8 @@ public class l001{
             ans[count-1] = idx;
         return ans;
     }
-    
+
+    // CLASS 2
     // ye top to bottom approch hai 
     // isme upar se ans mangvate hai
     public static ArrayList<String> getSubSequence(String str,int idx)
@@ -245,7 +247,6 @@ public class l001{
             bres.add("");
             return bres;
         }
-        
         List<String> rres = letterCombinations(str,idx+1,map);
         List<String> mres = new ArrayList<>();
         String val = map[str.charAt(idx) - '0'];
@@ -290,7 +291,6 @@ public class l001{
         return mres;
     } 
 
-    //CLASS 2
     public static ArrayList<String> mazePath(int sr,int sc,int er,int ec)
     {
         if(sr == er && sc == ec)
@@ -408,7 +408,7 @@ public class l001{
     }
 
     public static int floodFill_multi(int sr, int sc, boolean[][] vis, int[][] dir, String[] dirS,
-            ArrayList<String> ans, String psf) {
+        ArrayList<String> ans, String psf) {
         int n = vis.length, m = vis[0].length;
         if (sr == n - 1 && sc == m - 1) {
             ans.add(psf);
@@ -430,7 +430,7 @@ public class l001{
         vis[sr][sc] = false;
         return count;
     }
-
+    
     //CLASS3
     // https://practice.geeksforgeeks.org/problems/rat-in-a-maze-problem/1
     // Rat in a Maze Problem - I 
@@ -510,8 +510,6 @@ public class l001{
     }
 
     //Rat in a Maze Multiple Jumps allowed
-    
-    
     //Shortest Longest Path galt ans de deta hai tabhi 0 -1 return karaya hai
     public static class pair {
         String psf = "";

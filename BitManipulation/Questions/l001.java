@@ -8,7 +8,7 @@ public class l001{
     int m = scn.nextInt();
     
     int onmask = (1<<i);
-    System.out.println((n|onmask));
+    System.out.println((n|onmask)); 
     int offmask = ~(1<<j);
     System.out.println((n&offmask));
     int xormask = (1<<k);
@@ -17,26 +17,24 @@ public class l001{
     System.out.println((n&checkmask) == 0 ? false : true);
   }
 }
-//Print Value Of Rsb Mask
+
+//Print Value Of Rsb Mask   :: pheli bit jo 1 ho  <--- iss direction se (-n is 2s complement of n)
 import java.io.*;
 import java.util.*;
 public class Main {
-
   public static void main(String[] args){
     Scanner scn = new Scanner(System.in);
     int n = scn.nextInt();
-
     int ans = (n&-n);
     System.out.println(Integer.toBinaryString(ans));
   }
 }
+
 //Kernighans Algorithm
 public class Main {
-
   public static void main(String[] args){
     Scanner scn = new Scanner(System.in);
     int n = scn.nextInt();
-    
     int count = 0;
     while(n!=0)
     {
@@ -44,10 +42,8 @@ public class Main {
       n-=rsmb;
       count++;
     }
-
     System.out.println(count);
   }
-
 }
 //Counting Bits LEETCODE:
 class Solution {
@@ -230,3 +226,27 @@ class Solution {
     }
 }
 //
+
+class Solution {
+    int[][] dp;
+    public int maxSatisfaction(int[] s) {
+        Arrays.sort(s);
+        dp = new int[s.length + 1][s.length + 1];
+        for(int[] d : dp)
+            Arrays.fill(d,-(int)1e8);
+        return maxSatisfaction(s,0,0);
+    }
+    
+    public int maxSatisfaction(int[] satisfaction,int idx,int time) {
+        if(idx == satisfaction.length)
+            return dp[idx][time] = 0;
+        if(dp[idx][time] != -(int)1e8)
+            return dp[idx][time];        
+        int max = -(int)1e9;
+        if(idx+1<=satisfaction.length)
+            max = Math.max(max,maxSatisfaction(satisfaction,idx+1,time + 1) + (time + 1)*satisfaction[idx]);
+        if(idx+1<=satisfaction.length)
+            max = Math.max(max,maxSatisfaction(satisfaction,idx+1,time));
+        return dp[idx][time] = max;
+    }
+}

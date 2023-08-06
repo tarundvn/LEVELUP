@@ -177,14 +177,11 @@ public class l001 {
     static int NodeToNodeMaxPathSum;
     public static int maxPathSum_(TreeNode root) {
       if (root == null) return 0;
-
       int lrtn = maxPathSum_(root.left); // left root To Node
       int rrtn = maxPathSum_(root.right); // right root To Node
-
       int rootToNode = Math.max(lrtn, rrtn) + root.val;
       NodeToNodeMaxPathSum =
         max(NodeToNodeMaxPathSum, rootToNode, root.val, lrtn + root.val + rrtn);
-
       return max(rootToNode, root.val);
     }
     

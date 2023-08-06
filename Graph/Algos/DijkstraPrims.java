@@ -102,7 +102,6 @@ public class DijkstraPrims
         PriorityQueue<Integer> pq = new PriorityQueue<>((a,b)->{
             return a.w - b.w;
         });
-
         pq.add(new pair(src,-1,0,0));
         while(pq.size()!=0)
         {
@@ -123,7 +122,6 @@ public class DijkstraPrims
                 }
             }
         }
-
     }
 
     public static void dijikstra_Btr(ArrayList<Edge>[] graph, int V, int src) {
@@ -211,7 +209,7 @@ class Solution {
         return val;
     }
 }
-//743 // using distamce array
+//743 // using distance array
 class Solution {
     public int networkDelayTime(int[][] times, int n, int k) {
         

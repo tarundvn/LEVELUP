@@ -1,0 +1,6 @@
+mxDebit ka amount hai -4000 mxCredit ka amount hai 7000
+Dono mein se min amount aaya hai 4000
+Person 1 pays 4000 to Person 2
+mxDebit ka amount hai -3000 mxCredit ka amount hai 3000
+Dono mein se min amount aaya hai 3000
+Person 0 pays 3000 to Person 2

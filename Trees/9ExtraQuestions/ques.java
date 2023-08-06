@@ -323,3 +323,154 @@ class Solution {
     }
 }
 //
+
+public static String matrixSolver(int[][] arr)
+{
+    int[][] starts = {{0,0},{0,3},{0,6},{3,0},{3,3},{3,6},{6,0},{6,3},{6,6}};
+    String ans = "";
+    int idx = 1;
+    for(int[] x : starts)
+    {
+        boolean y = helper(arr,x[0],x[1]);
+        if(y)
+            ans = ans + (idx) + " ";
+        idx++;
+    }
+    ans.trim();
+    return ans;
+}
+
+public static boolean helper(int[][] arr,int sr,int sc)
+{
+    for(int i = sr; i < (sr + 3); i++)
+    {
+        for(int j = sc; j < (sc + 3); j++)
+        {
+            boolean ans = isvalid(i,j,arr,arr[i][j]);
+            if(ans == false)
+                return false;
+        }
+    }
+    return true;
+}
+
+public static boolean isvalid(int r, int c,int[][] arr,int num) {
+         
+        int c1 = 0;
+        for (int i = 0; i < board[0].length; i++) {
+            if (board[r][i] == num)
+                c1++;
+        }
+         
+         if(c1>1) return false;
+
+        int c2 = 0;
+         
+        for (int i = 0; i < board.length; i++) {
+            if (board[i][c] == num)
+                c2++;
+        }
+         
+         if(c2>1) return false; 
+
+        int rmi = r / 3 * 3;
+        int cmi = c / 3 * 3;
+        int count = 0;
+
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (board[rmi + i][cmi + j] == num)
+                    count++;
+            }
+        }
+            
+        if(count>1) return false;
+
+        return true;
+
+    }
+
+
+    public class shl {
+
+  public static void main(String[] args) {
+    char[][] arr = {
+      { '1', '2', '3', '4', '5', '6', '7', '8', '9' },
+      { 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x' },
+      { 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x' },
+      { '1', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x' },
+      { 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x' },
+      { 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x' },
+      { 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x' },
+      { 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x' },
+      { 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x' },
+    };
+    System.out.println(matrixSolver(arr));
+  }
+
+  public static String matrixSolver(char[][] arr) {
+    int[][] starts = {
+      { 0, 0 },
+      { 0, 3 },
+      { 0, 6 },
+      { 3, 0 },
+      { 3, 3 },
+      { 3, 6 },
+      { 6, 0 },
+      { 6, 3 },
+      { 6, 6 },
+    };
+    String ans = "";
+    int idx = 1;
+    for (int[] x : starts) {
+      boolean y = helper(arr, x[0], x[1]);
+      if (y == false) ans = ans + (idx) + " ";
+      idx++;
+    }
+    ans.trim();
+    return ans;
+  }
+
+  public static boolean helper(char[][] arr, int sr, int sc) {
+    for (int i = sr; i < (sr + 3); i++) {
+      for (int j = sc; j < (sc + 3); j++) {
+        if (ans[i][j] == 'x') {
+          boolean ans = isvalid(i, j, arr, arr[i][j]);
+          if (ans == false) return false;
+        }
+      }
+    }
+    return true;
+  }
+
+  public static boolean isvalid(int r, int c, char[][] arr, char num) {
+    int c1 = 0;
+    for (int i = 0; i < board[0].length; i++) {
+      if (board[r][i] == num) c1++;
+    }
+
+    if (c1 > 1) return false;
+
+    int c2 = 0;
+
+    for (int i = 0; i < board.length; i++) {
+      if (board[i][c] == num) c2++;
+    }
+
+    if (c2 > 1) return false;
+
+    int rmi = r / 3 * 3;
+    int cmi = c / 3 * 3;
+    int count = 0;
+
+    for (int i = 0; i < 3; i++) {
+      for (int j = 0; j < 3; j++) {
+        if (board[rmi + i][cmi + j] == num) count++;
+      }
+    }
+
+    if (count > 1) return false;
+
+    return true;
+  }
+}

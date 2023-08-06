@@ -108,8 +108,7 @@ public class l001{
             int i = arr.length - 2;
             while(i>=0 && arr[i] >= arr[i+1])
                 i--;
-        
-            if(i==-1)
+                if(i==-1)
                 return -1;
         
             //now find just greater than i;
